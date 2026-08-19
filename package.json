@@ -5,7 +5,8 @@
     "preview": "vite preview",
     "test:static": "node ./scripts/static-ship-tests.mjs",
     "test:graph": "node ./scripts/test-graph.mjs",
-    "test": "npm run test:static && npm run test:graph",
+    "test:proof": "node ./scripts/public-proof-check.mjs",
+    "test": "npm run test:static && npm run test:graph && npm run test:proof",
     "scan:secrets": "gitleaks detect --no-banner --redact --source . --config .gitleaks.toml",
     "validate": "npm test && npm run build",
     "prepare": "husky"
