@@ -1,0 +1,26 @@
+{
+  "repo": "leadingproblemsolver/TraceCrumb",
+  "artifact_id": "tracecrumb-first60-incident-memory",
+  "artifact_url": "https://github.com/leadingproblemsolver/TraceCrumb",
+  "system": "TraceCrumb First-60",
+  "wedge": "incident memory that compresses live symptoms plus prior incidents into the safest first diagnostic branch",
+  "target_roles": [
+    "SRE",
+    "DevOps Engineer",
+    "Incident Response Lead"
+  ],
+  "pain_signals": [
+    "P1 responders lose the first minute reconstructing context",
+    "teams repeat old diagnostic branches",
+    "incident memory is scattered across Slack, dashboards, and postmortems",
+    "wrong-first-call debugging increases time to resolution"
+  ],
+  "proof_refs": [
+    "README.md — First-60 product flow, distribution loop, and proof metric",
+    "scripts/static-ship-tests.mjs",
+    "npm run ship:test",
+    "PORTFOLIO_EVIDENCE.md",
+    "RELEASE_CHECKLIST.md"
+  ],
+  "desired_consequence": "one SRE or DevOps responder tests the no-signup demo against a real recurring incident pattern and marks the suggested first branch useful, partial, or wrong"
+}
