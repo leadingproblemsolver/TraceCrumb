@@ -16,12 +16,12 @@ jobs:
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: "22.16.0"
-      - name: Pin npm and public registry
+      - name: Pin npm
         run: |
           npm install --global npm@11.19.0
-          npm config set registry https://registry.npmjs.org/
-          npm config set replace-registry-host always
           npm --version
+      - name: Normalize portable lock registry
+        run: node ./scripts/normalize-lock-registry.mjs
       - name: Install locked dependencies
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Run native validation
