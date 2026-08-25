@@ -37,4 +37,4 @@ jobs:
             exit 1
           }
       - name: Run deployed-preview browser acceptance
-        run: npx playwright test e2e/preview.spec.mjs --project=chromium
+        run: npx playwright test e2e/preview.spec.mjs
