@@ -55,13 +55,12 @@ if (!existsSync(graphViewPath)) fail('Missing GraphView.jsx'); else {
   if (!graphView.includes('exportGraphJson')) fail('Graph lacks JSON export'); else pass('graph JSON export present');
 }
 
-
 const errorBoundaryPath = join(root, 'src', 'ErrorBoundary.jsx');
 if (!existsSync(errorBoundaryPath)) fail('Missing ErrorBoundary.jsx'); else pass('render error boundary present');
 if (!existsSync(join(root, '.env.example'))) fail('Missing .env.example'); else pass('environment contract present');
 if (!existsSync(join(root, '.github', 'workflows', 'ci.yml'))) fail('Missing CI workflow'); else pass('CI workflow present');
 if (!existsSync(join(root, 'Dockerfile'))) fail('Missing Dockerfile'); else pass('container deployment present');
-if (pkg.packageManager !== 'npm@10.9.2') fail('npm package manager is not pinned'); else pass('npm package manager pinned');
+if (pkg.packageManager !== 'npm@11.19.0') fail('npm package manager is not pinned to the repository CI version'); else pass('npm package manager pinned');
 if (Object.values(pkg.dependencies || {}).some((value) => value === 'latest')) fail('runtime dependency uses latest'); else pass('runtime dependencies pinned');
 if (pkg.dependencies?.vite || pkg.dependencies?.['@vitejs/plugin-react']) fail('build tools must be devDependencies'); else pass('build tools isolated to devDependencies');
 if (!client.includes('offlineClient') || !client.includes('isSupabaseConfigured')) fail('Supabase offline-safe boundary missing'); else pass('Supabase offline-safe boundary present');
